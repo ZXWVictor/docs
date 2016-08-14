@@ -277,4 +277,168 @@ Url: `DELETE /inspections/:inspectionID/activities/:activityID`
 },
 ```
 
-####
+
+### 3 地下设施
+url-prefix: `/facilities`
+
+#### 3.1 获取设施列表
+Url: `GET /facilities`
+> Output
+```
+[
+    {
+        "id": 231,
+        "displayName": "东线安全通道"
+    },
+    {
+        "id": 232,
+        "displayName": "西线安全通道"
+    }
+]
+```
+
+#### 3.2 获取设施
+Url: `GET /facilities/:facilityID`
+> Output
+```
+{
+    "id": 123
+    "name": "设施名",
+    "rings": [
+        {"id": 1, mileage: 0},
+        {"id": 2, mileage: 20}
+    ],
+    "diseases": [
+        {
+            "id": 123,
+            "mileage": 133,
+            "histories": [
+                {
+                    "recordID": 1,
+                    "createdAt": 123133,
+                    "imgUrl": "/img.jpeg", 
+                    "diseases": [
+                        {
+                            "id": 123,
+                            "diseaseType": 1,//病害大类
+                            "detailType": 2,//病害小类
+                            "depth": 30,//深度mm
+                            "length": 123,//长度mm
+                            "width": 121,//宽度mm
+                            "area": 214,//mm²
+                            "jointOpen": 100,//张开量mm
+                            "dislocation": 100, //错台量mm
+                            "imgUrl": "/img.jpeg", 
+                            "createdBy": userID // 创建人ID
+                        },
+                        {
+                            "id": 123,
+                            "diseaseType": 1,//病害大类
+                            "detailType": 2,//病害小类
+                            "depth": 30,//深度mm
+                            "length": 123,//长度mm
+                            "width": 121,//宽度mm
+                            "area": 214,//mm²
+                            "jointOpen": 100,//张开量mm
+                            "dislocation": 100, //错台量mm
+                            "createdBy": userID // 创建人ID
+                        }
+                    ]
+                },
+                {
+                    "recordID": 2,
+                    "createdAt": 123133,
+                    "diseases": [
+                        {
+                            "id": 123,
+                            "diseaseType": 1,//病害大类
+                            "detailType": 2,//病害小类
+                            "depth": 30,//深度mm
+                            "length": 123,//长度mm
+                            "width": 121,//宽度mm
+                            "area": 214,//mm²
+                            "jointOpen": 100,//张开量mm
+                            "dislocation": 100, //错台量mm
+                            "imgUrl": "/img.jpeg", 
+                            "createdBy": userID // 创建人ID
+                        },
+                        {
+                            "id": 123,
+                            "diseaseType": 1,//病害大类
+                            "detailType": 2,//病害小类
+                            "depth": 30,//深度mm
+                            "length": 123,//长度mm
+                            "width": 121,//宽度mm
+                            "area": 214,//mm²
+                            "jointOpen": 100,//张开量mm
+                            "dislocation": 100, //错台量mm
+                            "imgUrl": "/img.jpeg", 
+                            "createdBy": userID // 创建人ID
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+```
+
+#### 3.3 获取灾害种类
+Url: `GET /diseaseTypes`
+```javascript
+[
+    {
+        "diseaseTypeID": 123,
+        "typeName": "漏水",
+        "subTypes": [
+            {
+                "subTypeID": 1,
+                "typeName": "水1"
+            },
+            {
+                "subTypeID": 2,
+                "typeName": "水2"
+            }
+        ]
+    }
+]
+```
+
+#### 3.4 上传灾害
+```javascript
+[
+    {
+        "mileage": 133,
+        "imgUrl": "/img.jpeg", 
+        "diseases": [
+            {
+                "id": 123,
+                "diseaseType": 1,//病害大类
+                "detailType": 2,//病害小类
+                "depth": 30,//深度mm
+                "length": 123,//长度mm
+                "width": 121,//宽度mm
+                "area": 214,//mm²
+                "jointOpen": 100,//张开量mm
+                "dislocation": 100, //错台量mm
+                "imgUrl": "/img.jpeg", 
+                "createdBy": userID // 创建人ID
+            },
+            {
+                "id": 123,
+                "diseaseType": 1,//病害大类
+                "detailType": 2,//病害小类
+                "depth": 30,//深度mm
+                "length": 123,//长度mm
+                "width": 121,//宽度mm
+                "area": 214,//mm²
+                "jointOpen": 100,//张开量mm
+                "dislocation": 100, //错台量mm
+                "createdBy": userID // 创建人ID
+            }
+        ]
+    }
+]
+
+```
