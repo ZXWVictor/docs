@@ -271,7 +271,7 @@ Url: `PUT /inspections/:inspectionID/activities/:activityID`
 #### 2.8 删除巡检活动
 Url: `DELETE /inspections/:inspectionID/activities/:activityID`
 > Output
-```
+```javascript
 {
     "id": activityID
 },
@@ -284,7 +284,7 @@ url-prefix: `/facilities`
 #### 3.1 获取设施列表
 Url: `GET /facilities`
 > Output
-```
+```javascript
 [
     {
         "id": 231,
@@ -300,7 +300,7 @@ Url: `GET /facilities`
 #### 3.2 获取设施
 Url: `GET /facilities/:facilityID`
 > Output
-```
+```javascript
 {
     "id": 123
     "name": "设施名",
@@ -386,6 +386,7 @@ Url: `GET /facilities/:facilityID`
 
 #### 3.3 获取灾害种类
 Url: `GET /diseaseTypes`
+> Output
 ```javascript
 [
     {
@@ -406,10 +407,12 @@ Url: `GET /diseaseTypes`
 ```
 
 #### 3.4 上传灾害
+> Input
 ```javascript
 [
     {
-        "mileage": 133,
+        // 环号
+        "ringID": 123,
         "imgUrl": "/img.jpeg", 
         "diseases": [
             {
@@ -440,5 +443,14 @@ Url: `GET /diseaseTypes`
         ]
     }
 ]
-
 ```
+
+> Output
+```javascript
+[
+    {"ringID":213},
+    {"ringID": 214}
+]
+```
+
+3.5 
